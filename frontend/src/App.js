@@ -1,26 +1,31 @@
 // frontend/src/App.js
 
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
   const [users, setUsers] = useState([]);
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   useEffect(() => {
     fetchUsers();
   }, []);
 
   const fetchUsers = async () => {
-    const response = await axios.get('http://localhost:5000/api/users');
+    const response = await axios.get(
+      "https://vercel-eight-delta-92.vercel.app//api/users"
+    );
     setUsers(response.data);
   };
 
   const addUser = async () => {
     if (name) {
-      const response = await axios.post('http://localhost:5000/api/users', { name });
+      const response = await axios.post(
+        "https://vercel-eight-delta-92.vercel.app//api/users",
+        { name }
+      );
       setUsers([...users, response.data]);
-      setName('');
+      setName("");
     }
   };
 
@@ -28,7 +33,7 @@ function App() {
     <div>
       <h1>User List</h1>
       <ul>
-        {users.map(user => (
+        {users.map((user) => (
           <li key={user.id}>{user.name}</li>
         ))}
       </ul>
