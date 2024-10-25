@@ -17,7 +17,9 @@ let users = [
   { id: 1, name: "John Doe" },
   { id: 2, name: "Jane Smith" },
 ];
-
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 // Get all users
 app.get("/api/users", (req, res) => {
   res.json(users);
@@ -36,5 +38,4 @@ app.post("/api/users", (req, res) => {
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  res.send({ msg: "hello world" });
 });
