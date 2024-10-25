@@ -36,4 +36,5 @@ app.post("/api/users", (req, res) => {
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  res.send({ msg: "hello world" });
 });
