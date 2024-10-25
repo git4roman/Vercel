@@ -17,7 +17,7 @@ let users = [
   { id: 1, name: "John Doe" },
   { id: 2, name: "Jane Smith" },
 ];
-app.get("/", (req, res) => {
+app.get("/api/hello", (req, res) => {
   res.send("Hello World!");
 });
 // Get all users
