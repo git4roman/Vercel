@@ -1,41 +1,11 @@
-// backend/server.js
-
 import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const app = express();
-app.use(cors());
-app.use(express.json());
-
-const PORT = process.env.PORT || 5000;
-
-// Sample data
-let users = [
-  { id: 1, name: "John Doe" },
-  { id: 2, name: "Jane Smith" },
-];
-app.get("/", (req, res) => {
- res.json({msg: "Hello"});
-});
-// Get all users
-app.get("/api/users", (req, res) => {
-  res.json(users);
+const port = 9000;
+app.use("/", (req, res) => {
+  res.json({ message: "Hello From Express App" });
 });
 
-// Add a new user
-app.post("/api/users", (req, res) => {
-  const newUser = {
-    id: users.length + 1,
-    name: req.body.name,
-  };
-  users.push(newUser);
-  res.status(201).json(newUser);
-});
-
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(9000, () => {
+  console.log(`Starting Server on Port ${port}`);
 });
