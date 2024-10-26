@@ -18,7 +18,6 @@ let users = [
   { id: 2, name: "Jane Smith" },
 ];
 app.get("/", (req, res) => {
-  res.send("Hello World!");
  res.json({msg: "Hello"});
 });
 // Get all users
