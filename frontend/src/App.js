@@ -13,7 +13,7 @@ function App() {
 
   const fetchUsers = async () => {
     const response = await axios.get(
-      "http://vercel-eight-delta-92.vercel.app/api/users"
+      "https://vercel-eight-delta-92.vercel.app/api/users"
     );
     setUsers(response.data);
   };
@@ -21,7 +21,7 @@ function App() {
   const addUser = async () => {
     if (name) {
       const response = await axios.post(
-        "http://vercel-eight-delta-92.vercel.app/api/users",
+        "https://vercel-eight-delta-92.vercel.app/api/users",
         { name }
       );
       setUsers([...users, response.data]);
