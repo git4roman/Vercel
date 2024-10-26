@@ -14,8 +14,9 @@ const PORT = process.env.PORT || 5000;
 
 // Sample data
 let users = [
-  { id: 1, name: "John Doe" },
-  { id: 2, name: "Jane Smith" },
+  { id: 1, name: "Nisung Kerung" },
+  { id: 2, name: "Biddhan Pokhrel" },
+  {id: 3, name: "Roman Ghimire},
 ];
 app.get("/", (req, res) => {
  res.json({msg: "Hello"});
