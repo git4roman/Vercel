@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     fetchUsers();
-  }, []);
+  }, [users]);
 
   const fetchUsers = async () => {
     const response = await axios.get(
